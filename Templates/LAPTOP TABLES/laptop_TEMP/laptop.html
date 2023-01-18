@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Laptop-Table </title>
+    <meta content="" name="description">
+    <meta content="Author" name="MJ Maraz">
+    <link href="{% static 'laptop/images/favicon.png' %}" rel="icon">
+    <link href="{% static 'laptop/images/favicon.png' %}" rel="apple-touch-icon">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <!-- ========================================================= -->
+
+
+    <link rel="stylesheet" href="{% static 'laptop/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'laptop/css/datatables.min.css' %}">
+    <link rel="stylesheet" href="{% static 'laptop/css/style.css' %}">
+
+</head>
+<!-- =============== Design & Develop By = MJ MARAZ   ====================== -->
+
+<body>
+    <header class="header_part">
+        <img src="{% static 'laptop/images/logo.png' %}" alt="" class="img-fluid">
+        <h4>LAPTOP - PAGE </h4>
+    </header>
+    <!-- =======  Data-Table  = Start  ========================== -->
+    <div class="container">
+        <div class="row container"> 
+            <div class="col-2">
+                <button type="button" class="btn btn-outline-dark">Add Laptop</button>
+
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <div class="data_table">
+                    <table id="example" class="table table-striped table-bordered">
+                        <thead class="table-dark">
+                            <tr>
+                                <th>ID</th>
+                                <th>BRAND</th>
+                                <th>MODEL</th>
+                                <th>Serial NO</th>
+                                <th>Location</th>
+                                <th>Status</th>
+                                <th>EDIT</th>
+                                <th>VIEW</th>
+                           
+                             
+                            </tr>
+                        </thead>
+                        <tbody>
+                        {% for i in laptops %}
+                            <tr>
+                                <td>{{i.laptop_id}}</td>
+                                <td>{{i.brand}}</td>
+                                <td>{{i.model}}</td>
+                                <td>{{i.SerialNo}}</td>
+                                <td>{{i.AssignedLocation}}</td>
+                                <td>{{i.working_status}}</td>
+                                <td><a href="#">Edit</a></i></td>
+                                <td><a href="#">View</a></td>                              
+                            </tr>
+                        {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- =======  Data-Table  = End  ===================== -->
+    <!-- ============ Java Script Files  ================== -->
+
+
+    <script src="{% static 'laptop/js/bootstrap.bundle.min.js' %}"></script>
+    <script src="{% static 'laptop/js/jquery-3.6.0.min.js' %}"></script>
+    <script src="{% static 'laptop/js/datatables.min.js' %}"></script>
+    <script src="{% static 'laptop/js/pdfmake.min.js' %}"></script>
+    <script src="{% static 'laptop/js/vfs_fonts.js' %}"></script>
+    <script src="{% static 'laptop/js/custom.js' %}"></script>
+
+
+
+
+</body>
+
+</html>
